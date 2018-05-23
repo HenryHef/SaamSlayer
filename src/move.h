@@ -38,7 +38,47 @@ struct Move
 					isCastle(_isCastle), castleKingside(_castleKingside), isNull(_isNull),
 					player(_player)
 	{}
+
+	bool getIsEnp()
+	{
+		return isEnp;
+	}
+	bool getIsPromo()
+	{
+		return isPromo;
+	}
+	bool getIsCapture()
+	{
+		return isCapture;
+	}
+	bool getIsCastle()
+	{
+		return isCastle;
+	}
+	bool getIsKingside()
+	{
+		return castleKingside;
+	}
+
+	int getFromRow()
+	{
+		return ROW(from);
+	}
+	int getFromCol()
+	{
+		return COL(from);
+	}
+
+	int getToRow()
+	{
+		return ROW(to);
+	}
+	int getToCol()
+	{
+		return COL(to);
+	}
 };
+
 
 
 

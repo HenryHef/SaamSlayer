@@ -10,11 +10,11 @@
 
 #include "basedef.h"
 #include "board.h"
+#include "ChessGame.h"
 #include "eval.h"
-#include "eval_consts.h"
+#include "move.h"
 #include "move_gen_sort.h"
 #include "SaamSlayer.h"
-#include "trans_table.h"
 
 using namespace std;
 
@@ -85,11 +85,13 @@ void playgameCC()
 
 int main(int argc, char* argv[])
 {
+//	ChessGame cg = ChessGame();
+//	cg.getAndApplyMove();
 	setDefaultEvalValues();
 	initBoardHashData();
 	oh.initVals();
-
-	//playgameCC();
+//
+//	//playgameCC();
 	playgameHC(BLACK,SaamSlayer());
 	return 0;
 }

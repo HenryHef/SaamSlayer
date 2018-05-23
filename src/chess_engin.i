@@ -1,16 +1,15 @@
  // pair.i - SWIG interface
  %module chess_engin
- %{
- #include "ChessGame.h"
- #include "basedef.h"
- #include "move.h"
- %}
  
 %include "std_vector.i"
-namespace std {
-  %template(VecInt) vector<int>;
-  %template(VecVecInt) vector< vector<int> >;
-}
+%template(VecInt) std::vector<int>;
+ 
+ %{
+ #include "basedef.h"
+ #include "move.h"
+ #include "ChessGameBoardState.h"
+ #include "ChessGame.h"
+ %}
 
 %ignore operator<<(std::ostream&, const Player);
 %ignore operator<<(std::ostream&, const PieceType);
@@ -18,6 +17,7 @@ namespace std {
 %ignore operator<<(std::ostream&, const Board);
 %rename (opp) operator!(const Player);
 
- %include "ChessGame.h"
- %include "basedef.h"
- %include "move.h"
+%include "basedef.h"
+%include "move.h"
+%include "ChessGameBoardState.h"
+%include "ChessGame.h"
